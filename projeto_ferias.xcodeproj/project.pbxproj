@@ -8,15 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		49240A5120040DE20009A796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49240A5020040DE20009A796 /* AppDelegate.swift */; };
-		49240A5320040DE20009A796 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49240A5220040DE20009A796 /* GameScene.sks */; };
+		49240A5320040DE20009A796 /* SimetryGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49240A5220040DE20009A796 /* SimetryGameScene.sks */; };
 		49240A5520040DE20009A796 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49240A5420040DE20009A796 /* Actions.sks */; };
-		49240A5720040DE20009A796 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49240A5620040DE20009A796 /* GameScene.swift */; };
-		49240A5920040DE20009A796 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49240A5820040DE20009A796 /* GameViewController.swift */; };
+		49240A5720040DE20009A796 /* SimetryGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49240A5620040DE20009A796 /* SimetryGameScene.swift */; };
+		49240A5920040DE20009A796 /* SimetryGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49240A5820040DE20009A796 /* SimetryGameViewController.swift */; };
 		49240A5C20040DE20009A796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49240A5A20040DE20009A796 /* Main.storyboard */; };
 		49240A5E20040DE20009A796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49240A5D20040DE20009A796 /* Assets.xcassets */; };
 		49240A6120040DE20009A796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49240A5F20040DE20009A796 /* LaunchScreen.storyboard */; };
 		49240A6C20040DE20009A796 /* projeto_feriasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49240A6B20040DE20009A796 /* projeto_feriasTests.swift */; };
 		49240A7720040DE20009A796 /* projeto_feriasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49240A7620040DE20009A796 /* projeto_feriasUITests.swift */; };
+		49240A8520056DB00009A796 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49240A8420056DB00009A796 /* Geometry.swift */; };
+		4982F4EA2006CCAD00814A45 /* Geometries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982F4E92006CCAD00814A45 /* Geometries.swift */; };
+		4982F4EC2006D7D000814A45 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982F4EB2006D7D000814A45 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +42,10 @@
 /* Begin PBXFileReference section */
 		49240A4D20040DE20009A796 /* projeto_ferias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projeto_ferias.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49240A5020040DE20009A796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49240A5220040DE20009A796 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		49240A5220040DE20009A796 /* SimetryGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SimetryGameScene.sks; sourceTree = "<group>"; };
 		49240A5420040DE20009A796 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		49240A5620040DE20009A796 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		49240A5820040DE20009A796 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		49240A5620040DE20009A796 /* SimetryGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimetryGameScene.swift; sourceTree = "<group>"; };
+		49240A5820040DE20009A796 /* SimetryGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimetryGameViewController.swift; sourceTree = "<group>"; };
 		49240A5B20040DE20009A796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49240A5D20040DE20009A796 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49240A6020040DE20009A796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +56,9 @@
 		49240A7220040DE20009A796 /* projeto_feriasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projeto_feriasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49240A7620040DE20009A796 /* projeto_feriasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projeto_feriasUITests.swift; sourceTree = "<group>"; };
 		49240A7820040DE20009A796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49240A8420056DB00009A796 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		4982F4E92006CCAD00814A45 /* Geometries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometries.swift; sourceTree = "<group>"; };
+		4982F4EB2006D7D000814A45 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +110,15 @@
 			isa = PBXGroup;
 			children = (
 				49240A5020040DE20009A796 /* AppDelegate.swift */,
-				49240A5220040DE20009A796 /* GameScene.sks */,
+				49240A5220040DE20009A796 /* SimetryGameScene.sks */,
 				49240A5420040DE20009A796 /* Actions.sks */,
-				49240A5620040DE20009A796 /* GameScene.swift */,
-				49240A5820040DE20009A796 /* GameViewController.swift */,
+				49240A5620040DE20009A796 /* SimetryGameScene.swift */,
+				4982F4EB2006D7D000814A45 /* Extensions.swift */,
+				49240A8420056DB00009A796 /* Geometry.swift */,
+				49240A5820040DE20009A796 /* SimetryGameViewController.swift */,
 				49240A5A20040DE20009A796 /* Main.storyboard */,
 				49240A5D20040DE20009A796 /* Assets.xcassets */,
+				4982F4E92006CCAD00814A45 /* Geometries.swift */,
 				49240A5F20040DE20009A796 /* LaunchScreen.storyboard */,
 				49240A6220040DE20009A796 /* Info.plist */,
 			);
@@ -242,7 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49240A5C20040DE20009A796 /* Main.storyboard in Resources */,
-				49240A5320040DE20009A796 /* GameScene.sks in Resources */,
+				49240A5320040DE20009A796 /* SimetryGameScene.sks in Resources */,
 				49240A5E20040DE20009A796 /* Assets.xcassets in Resources */,
 				49240A6120040DE20009A796 /* LaunchScreen.storyboard in Resources */,
 				49240A5520040DE20009A796 /* Actions.sks in Resources */,
@@ -270,8 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49240A5720040DE20009A796 /* GameScene.swift in Sources */,
-				49240A5920040DE20009A796 /* GameViewController.swift in Sources */,
+				4982F4EA2006CCAD00814A45 /* Geometries.swift in Sources */,
+				4982F4EC2006D7D000814A45 /* Extensions.swift in Sources */,
+				49240A5720040DE20009A796 /* SimetryGameScene.swift in Sources */,
+				49240A8520056DB00009A796 /* Geometry.swift in Sources */,
+				49240A5920040DE20009A796 /* SimetryGameViewController.swift in Sources */,
 				49240A5120040DE20009A796 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
