@@ -27,6 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.physicsWorld.contactDelegate = self
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
         self.answerFormKey = Geometries.getFormKey()
         
@@ -49,12 +50,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let texture = SKTexture(imageNamed: formKey)
             let size = CGSize(width: self.width*0.1, height: self.width*0.1)
             let geometry = Geometry(texture: texture, color: .white, size: size)
-            geometry.name = Geometries.getFormName(asset: formKey)
+            geometry.name = formKey
             geometry.position = node.position
             geometry.physicsBody = SKPhysicsBody(texture: texture, size: size)
             geometry.physicsBody?.usesPreciseCollisionDetection = true
-            geometry.physicsBody?.categoryBitMask = self.formCategory
-//            geometry.physicsBody?.isDynamic = false
+            if formKey == self.answerFormKey {
+                geometry.physicsBody?.categoryBitMask = self.formCategory
+            }
+            geometry.physicsBody?.allowsRotation = false
             self.addChild(geometry)
             self.geometries.append(geometry)
             node.removeFromParent()
@@ -65,14 +68,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let texture = SKTexture(imageNamed: answerFormKey+"_invertida")
         let size = CGSize(width: self.width*0.1, height: self.width*0.1)
         self.answerNode = Geometry(texture: texture, color: .white, size: size)
-        answerNode.name = Geometries.getFormName(asset: answerFormKey)
+        answerNode.name = answerFormKey
         answerNode.position = CGPoint(x: answerNode.size.width/2, y: 0)
         answerNode.physicsBody = SKPhysicsBody(texture: texture, size: size)
         answerNode.physicsBody?.usesPreciseCollisionDetection = true
         answerNode.physicsBody?.categoryBitMask = self.answerCategory
-        answerNode.physicsBody?.collisionBitMask = self.formCategory
         answerNode.physicsBody?.contactTestBitMask = self.formCategory
-        answerNode.physicsBody?.isDynamic = false
+        answerNode.physicsBody?.allowsRotation = false
         self.addChild(answerNode)
         node?.removeFromParent()
         
@@ -111,6 +113,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for geometry in geometries {
             geometry.isMoving = false
         }
+        let action = SKAction.move(to: CGPoint(x: self.answerNode.size.width/2, y: 0), duration: 0.1)
+        self.answerNode.run(action)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -153,11 +157,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let action = SKAction(named: "Disappear")
                 g.run(action!)
             } else if g.position.x < 0 {
-                let action1 = SKAction.move(to: CGPoint(x: -self.height*0.5/2, y: 0), duration: 3)
-                let action2 = SKAction.resize(toWidth: self.height*0.5, height: self.height*0.5, duration: 3)
+                let action1 = SKAction.move(to: CGPoint(x: -self.height*0.5/2, y: 0), duration: 2)
+                let action2 = SKAction.resize(toWidth: self.height*0.5, height: self.height*0.5, duration: 2)
                 let group1 = SKAction.group([action1, action2])
                 g.run(group1)
-                let action3 = SKAction.move(to: CGPoint(x: self.height*0.5/2, y: 0), duration: 3)
+                let action3 = SKAction.move(to: CGPoint(x: self.height*0.5/2, y: 0), duration: 2)
                 let group2 = SKAction.group([action2, action3])
                 self.answerNode.run(group2)
                 self.labelNode.text = "Parabéns!"
