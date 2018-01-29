@@ -10,17 +10,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="RcZ-Sk-EFV">
             <objects>
-                <viewController id="le8-C0-zrN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gf2-hb-Vy4">
+                <viewController id="le8-C0-zrN" customClass="MenuViewController" customModule="projeto_ferias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gf2-hb-Vy4" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-AC-1Nz">
-                                <rect key="frame" x="171" y="172" width="141" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzJ-mb-24T">
+                                <rect key="frame" x="306" y="157" width="200" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="PMc-6w-GbG"/>
+                                    <constraint firstAttribute="height" constant="60" id="jdq-6G-7fM"/>
+                                </constraints>
+                                <state key="normal" title="Coletar Formas"/>
+                                <connections>
+                                    <segue destination="t63-ib-af9" kind="show" id="cig-DY-xco"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-AC-1Nz">
+                                <rect key="frame" x="306.66666666666669" y="48" width="200" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="W42-bA-IPR"/>
+                                    <constraint firstAttribute="width" constant="200" id="vys-Vb-9m5"/>
+                                </constraints>
                                 <state key="normal" title="Simetria"/>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="show" id="TBA-oH-rTh"/>
@@ -28,12 +42,37 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zzJ-mb-24T" firstAttribute="centerX" secondItem="gf2-hb-Vy4" secondAttribute="centerX" id="8lN-A7-Uex"/>
+                            <constraint firstItem="zzJ-mb-24T" firstAttribute="top" secondItem="vLY-AC-1Nz" secondAttribute="bottom" constant="49" id="DdN-0F-lOF"/>
+                            <constraint firstItem="zzJ-mb-24T" firstAttribute="centerY" secondItem="gf2-hb-Vy4" secondAttribute="centerY" id="nBj-YR-M6l"/>
+                            <constraint firstItem="vLY-AC-1Nz" firstAttribute="centerX" secondItem="gf2-hb-Vy4" secondAttribute="centerX" id="oHL-U9-bRR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k1b-fV-Qcl"/>
                     </view>
+                    <connections>
+                        <outlet property="colectGameButton" destination="zzJ-mb-24T" id="VR6-GF-8yW"/>
+                        <outlet property="simetryGameButton" destination="vLY-AC-1Nz" id="S01-H4-TvU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aa3-Ah-gaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-847.20000000000005" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-847.53694581280797" y="132"/>
+        </scene>
+        <!--Colect View Controller-->
+        <scene sceneID="NfP-2B-7EJ">
+            <objects>
+                <viewController id="t63-ib-af9" customClass="ColectViewController" customModule="projeto_ferias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9HL-ez-SwB" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="EjX-On-yIr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGV-a8-Dgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-848" y="1057"/>
         </scene>
         <!--Simetry-->
         <scene sceneID="tXr-a1-R10">
@@ -48,6 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1826" y="1057"/>
         </scene>
     </scenes>
 </document>

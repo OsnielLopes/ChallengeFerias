@@ -29,18 +29,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
-        self.answerFormKey = Geometries.getFormKey()
+        self.answerFormKey = Geometries.getFormKey(.simetry)
         
         if let label = self.childNode(withName: "label") as? SKLabelNode {
             self.labelNode = label
-            label.text = label.text! + Geometries.getFormName(asset: answerFormKey)
+            label.text = label.text! + Geometries.getFormName(gameType: .simetry, key: answerFormKey)
             label.position.x = 0
         }
         
         var formKeys = [String]()
         formKeys.append(answerFormKey)
         for _ in 0...1 {
-            formKeys.append(Geometries.getFormKey())
+            formKeys.append(Geometries.getFormKey(.simetry))
         }
         formKeys.shuffle()
         
@@ -78,6 +78,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(answerNode)
         node?.removeFromParent()
         
+        //setting the axis of symmetry
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: 0, y: -self.width*0.15))
+        path.addLine(to: CGPoint(x: 0, y: self.width*0.15))
+        let axis = SKShapeNode(path: path)
+        axis.name = "axisNode"
+        axis.lineWidth = 1
+        axis.strokeColor = .white
+        self.addChild(axis)
         
     }
     
@@ -100,7 +109,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     let deltaX = pos.x - geometry.lastTouch.x
                     if geometry.position.x + deltaX + geometry.size.width/2 <= 0 {
                         let deltaY = pos.y - geometry.lastTouch.y
-                        let move = SKAction.moveBy(x: deltaX, y: deltaY, duration: 0.001)
+                        let move = SKAction.moveBy(x: deltaX, y: deltaY, duration: 0.0001)
                         geometry.run(move)
                         geometry.lastTouch = pos
                     }
@@ -113,7 +122,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for geometry in geometries {
             geometry.isMoving = false
         }
-        let action = SKAction.move(to: CGPoint(x: self.answerNode.size.width/2, y: 0), duration: 0.1)
+        let action = SKAction.move(to: CGPoint(x: self.answerNode.size.width/2, y: 0), duration: 0.5)
         self.answerNode.run(action)
     }
     
@@ -152,18 +161,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Auxiliar Functions
     func won(_ position1: CGPoint, _ position2: CGPoint){
+        if let axixNode = self.childNode(withName: "axisNode") {
+            axixNode.removeFromParent()
+        }
         for g in geometries {
             if g.position != position1 && g.position != position2 {
                 let action = SKAction(named: "Disappear")
                 g.run(action!)
-            } else if g.position.x < 0 {
+            } else {
                 let action1 = SKAction.move(to: CGPoint(x: -self.height*0.5/2, y: 0), duration: 2)
                 let action2 = SKAction.resize(toWidth: self.height*0.5, height: self.height*0.5, duration: 2)
+                let action3 = SKAction.move(to: CGPoint(x: self.height*0.5/2, y: 0), duration: 2)
+                
                 let group1 = SKAction.group([action1, action2])
                 g.run(group1)
-                let action3 = SKAction.move(to: CGPoint(x: self.height*0.5/2, y: 0), duration: 2)
-                let group2 = SKAction.group([action2, action3])
+                
+                let group2 = SKAction.group([action3, action2])
                 self.answerNode.run(group2)
+                
                 self.labelNode.text = "Parabéns!"
             }
         }

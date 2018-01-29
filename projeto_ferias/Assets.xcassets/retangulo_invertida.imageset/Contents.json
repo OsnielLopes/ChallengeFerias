@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "retangulo_2_invertida.png",
+      "filename" : "retangulo_invertida.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "retangulo_2_invertida-2.png",
+      "filename" : "retangulo_invertida-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "retangulo_2_invertida-1.png",
+      "filename" : "retangulo_invertida-2.png",
       "scale" : "3x"
     }
   ],
