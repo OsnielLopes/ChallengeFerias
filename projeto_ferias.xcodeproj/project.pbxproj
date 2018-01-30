@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4913E76A2020F828006239FA /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913E7692020F828006239FA /* MemoryViewController.swift */; };
+		4913E76C2020F90B006239FA /* MemoryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913E76B2020F90B006239FA /* MemoryScene.swift */; };
+		4913E76E20210638006239FA /* CardSKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913E76D20210638006239FA /* CardSKNode.swift */; };
 		4917A8D320166E3F008888C9 /* ColectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917A8D220166E3F008888C9 /* ColectViewController.swift */; };
 		4917A8D520166FD6008888C9 /* ColectGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917A8D420166FD6008888C9 /* ColectGameScene.swift */; };
 		49240A5120040DE20009A796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49240A5020040DE20009A796 /* AppDelegate.swift */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4913E7692020F828006239FA /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
+		4913E76B2020F90B006239FA /* MemoryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryScene.swift; sourceTree = "<group>"; };
+		4913E76D20210638006239FA /* CardSKNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSKNode.swift; sourceTree = "<group>"; };
 		4917A8D220166E3F008888C9 /* ColectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColectViewController.swift; sourceTree = "<group>"; };
 		4917A8D420166FD6008888C9 /* ColectGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColectGameScene.swift; sourceTree = "<group>"; };
 		49240A4D20040DE20009A796 /* projeto_ferias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projeto_ferias.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,10 +130,13 @@
 				49240A5820040DE20009A796 /* SimetryGameViewController.swift */,
 				4917A8D220166E3F008888C9 /* ColectViewController.swift */,
 				4917A8D420166FD6008888C9 /* ColectGameScene.swift */,
-				49240A8420056DB00009A796 /* Geometry.swift */,
 				4933496E201E645B00B586C6 /* MenuViewController.swift */,
 				4933496A201E5F8600B586C6 /* MenuScene.swift */,
+				4913E7692020F828006239FA /* MemoryViewController.swift */,
+				4913E76B2020F90B006239FA /* MemoryScene.swift */,
+				4913E76D20210638006239FA /* CardSKNode.swift */,
 				4982F4E92006CCAD00814A45 /* Geometries.swift */,
+				49240A8420056DB00009A796 /* Geometry.swift */,
 				49240A5A20040DE20009A796 /* Main.storyboard */,
 				49240A5D20040DE20009A796 /* Assets.xcassets */,
 				49240A5F20040DE20009A796 /* LaunchScreen.storyboard */,
@@ -292,6 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4982F4EA2006CCAD00814A45 /* Geometries.swift in Sources */,
+				4913E76C2020F90B006239FA /* MemoryScene.swift in Sources */,
+				4913E76A2020F828006239FA /* MemoryViewController.swift in Sources */,
 				4933496F201E645B00B586C6 /* MenuViewController.swift in Sources */,
 				4982F4EC2006D7D000814A45 /* Extensions.swift in Sources */,
 				4917A8D520166FD6008888C9 /* ColectGameScene.swift in Sources */,
@@ -299,6 +310,7 @@
 				4917A8D320166E3F008888C9 /* ColectViewController.swift in Sources */,
 				49240A5720040DE20009A796 /* SimetryGameScene.swift in Sources */,
 				49240A8520056DB00009A796 /* Geometry.swift in Sources */,
+				4913E76E20210638006239FA /* CardSKNode.swift in Sources */,
 				49240A5920040DE20009A796 /* SimetryGameViewController.swift in Sources */,
 				49240A5120040DE20009A796 /* AppDelegate.swift in Sources */,
 			);
@@ -473,7 +485,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.Mackenzie.MackMobile.projeto-ferias";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -488,7 +500,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.Mackenzie.MackMobile.projeto-ferias";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

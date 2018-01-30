@@ -40,11 +40,24 @@
                                     <segue destination="BV1-FR-VrT" kind="show" id="TBA-oH-rTh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-5s-ZXR">
+                                <rect key="frame" x="306" y="266" width="200" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="vbw-pQ-9rx"/>
+                                    <constraint firstAttribute="width" constant="200" id="xss-bb-8c6"/>
+                                </constraints>
+                                <state key="normal" title="Jogo da Memória"/>
+                                <connections>
+                                    <segue destination="vgO-pj-qLv" kind="show" id="wfJ-Bn-r0h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zzJ-mb-24T" firstAttribute="centerX" secondItem="gf2-hb-Vy4" secondAttribute="centerX" id="8lN-A7-Uex"/>
                             <constraint firstItem="zzJ-mb-24T" firstAttribute="top" secondItem="vLY-AC-1Nz" secondAttribute="bottom" constant="49" id="DdN-0F-lOF"/>
+                            <constraint firstItem="ddd-5s-ZXR" firstAttribute="centerX" secondItem="gf2-hb-Vy4" secondAttribute="centerX" id="Ro5-8H-ILH"/>
+                            <constraint firstItem="ddd-5s-ZXR" firstAttribute="top" secondItem="zzJ-mb-24T" secondAttribute="bottom" constant="49" id="SgE-Ay-V3Y"/>
                             <constraint firstItem="zzJ-mb-24T" firstAttribute="centerY" secondItem="gf2-hb-Vy4" secondAttribute="centerY" id="nBj-YR-M6l"/>
                             <constraint firstItem="vLY-AC-1Nz" firstAttribute="centerX" secondItem="gf2-hb-Vy4" secondAttribute="centerX" id="oHL-U9-bRR"/>
                         </constraints>
@@ -52,6 +65,7 @@
                     </view>
                     <connections>
                         <outlet property="colectGameButton" destination="zzJ-mb-24T" id="VR6-GF-8yW"/>
+                        <outlet property="jogoDaMemoriaGameButton" destination="ddd-5s-ZXR" id="MYi-a5-isI"/>
                         <outlet property="simetryGameButton" destination="vLY-AC-1Nz" id="S01-H4-TvU"/>
                     </connections>
                 </viewController>
@@ -74,6 +88,21 @@
             </objects>
             <point key="canvasLocation" x="-848" y="1057"/>
         </scene>
+        <!--Memory View Controller-->
+        <scene sceneID="bxl-Vr-Uyq">
+            <objects>
+                <viewController id="vgO-pj-qLv" customClass="MemoryViewController" customModule="projeto_ferias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I9i-Dm-SGZ" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="M1O-q3-V14"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lXm-7O-2jz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-115" y="1057"/>
+        </scene>
         <!--Simetry-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -87,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1826" y="1057"/>
+            <point key="canvasLocation" x="-1548" y="1057"/>
         </scene>
     </scenes>
 </document>

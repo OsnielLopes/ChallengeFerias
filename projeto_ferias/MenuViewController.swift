@@ -13,12 +13,14 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var simetryGameButton: UIButton!
     @IBOutlet weak var colectGameButton: UIButton!
+    @IBOutlet weak var jogoDaMemoriaGameButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         simetryGameButton.backgroundColor = UIColor.white
         colectGameButton.backgroundColor = UIColor.white
+        jogoDaMemoriaGameButton.backgroundColor = UIColor.white
         
         simetryGameButton.tintColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1)
         simetryGameButton.titleLabel?.font = UIFont(name: "Futura-Medium", size: 20)
@@ -29,6 +31,11 @@ class MenuViewController: UIViewController {
         colectGameButton.titleLabel?.font = UIFont(name: "Futura-Medium", size: 20)
         colectGameButton.layer.cornerRadius = 10
         colectGameButton.clipsToBounds = true
+        
+        jogoDaMemoriaGameButton.tintColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+        jogoDaMemoriaGameButton.titleLabel?.font = UIFont(name: "Futura-Medium", size: 20)
+        jogoDaMemoriaGameButton.layer.cornerRadius = 10
+        simetryGameButton.clipsToBounds = true
         
         
         if let view = self.view as? SKView {
